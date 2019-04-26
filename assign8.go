@@ -28,6 +28,12 @@ func sendMessages() {
  
 }
 
+
+func dropIdleClient() {
+    
+    
+}
+
 func broadcaster() {
     clients := make(map[client]bool) // all connected clients
     for {
