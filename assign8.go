@@ -17,6 +17,7 @@ var (
 
 
 func sendMessages() {
+    msg := <- messages 
     select {
         case messages <- msg:
             fmt.Println("Sent message", msg)
