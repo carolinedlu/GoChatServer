@@ -15,6 +15,18 @@ var (
     messages = make(chan string) // all incoming client messages
 )
 
+
+func sendMessages() {
+    select {
+        case messages <- msg:
+            fmt.Println("Sent message", msg)
+        
+        default:
+            fmt.Println("No message sent")
+    }
+ 
+}
+
 func broadcaster() {
     clients := make(map[client]bool) // all connected clients
     for {
