@@ -5,6 +5,7 @@ import (
     "fmt"
     "log"
     "net"
+    "time"
 )
 
 type client chan<- string // an outgoing message channel
@@ -21,6 +22,8 @@ func sendMessages() {
     select {
         case messages <- msg:
             fmt.Println("Sent message", msg)
+            //timer1 := time.NewTimer(2 * time.Second)
+
         
         default:
             fmt.Println("No message sent")
